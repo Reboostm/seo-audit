@@ -35,3 +35,8 @@ export async function getConfig() {
     },
   };
 }
+
+export async function updateConfig(data: any) {
+  console.log('Update config called with:', data);
+  return true;
+}
