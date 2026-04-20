@@ -30,8 +30,6 @@ export async function generateReport(input: ReportInput) {
     const mapPackRank = mapPackData?.rank || 99;
 
     // Calculate lost revenue
-    const defaults = NICHE_DEFAULTS[niche] || NICHE_DEFAULTS.plumber;
-    const jobCost = customJobCost || defaults.jobCost;
     const { monthly: lostRevenueMonthly } = calculateLostRevenue(mapPackRank, niche, customJobCost);
 
     // Generate action items
@@ -74,7 +72,7 @@ export async function generateReport(input: ReportInput) {
     const htmlReport = generateHTMLReport(reportData);
 
     return {
-      success: true,
+      success: true as const,
       reportData,
       htmlReport,
       emailSubject: `Your Free SEO Audit Report: ${businessName} in ${city}, ${state}`,
@@ -83,7 +81,7 @@ export async function generateReport(input: ReportInput) {
   } catch (error) {
     console.error('Report generation error:', error);
     return {
-      success: false,
+      success: false as const,
       error: String(error),
     };
   }
