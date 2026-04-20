@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free SEO Audit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .body {
+            padding: 30px 20px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        @media (max-width: 480px) {
+            .row {
+                grid-template-columns: 1fr;
+            }
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 102, 204, 0.3);
+        }
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+        }
+        .error {
+            display: none;
+            background: #fee;
+            color: #c33;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 4px solid #c33;
+        }
+        .success {
+            display: none;
+            background: #efe;
+            color: #3c3;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3c3;
+        }
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ddd;
+            border-top-color: #0066cc;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Free SEO Audit</h2>
+            <p>See how you rank against your competitors</p>
+        </div>
+        <form id="auditForm" class="body">
+            <div class="error" id="error"></div>
+            <div class="success" id="success"></div>
+            <div id="form-content">
+                <div class="form-group">
+                    <label for="businessName">Business Name *</label>
+                    <input type="text" id="businessName" name="businessName" required placeholder="Your business">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                    <label for="niche">Business Type *</label>
+                    <select id="niche" name="niche" required>
+                        <option value="">Select...</option>
+                        <option value="plumber">Plumber</option>
+                        <option value="pest_control">Pest Control</option>
+                        <option value="electrician">Electrician</option>
+                        <option value="hvac">HVAC</option>
+                        <option value="locksmith">Locksmith</option>
+                        <option value="roofer">Roofer</option>
+                        <option value="carpet_cleaner">Carpet Cleaner</option>
+                        <option value="lawyer">Lawyer</option>
+                        <option value="contractor">Contractor</option>
+                        <option value="realtor">Realtor</option>
+                        <option value="accountant">Accountant</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" name="city" required placeholder="Austin">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State *</label>
+                        <input type="text" id="state" name="state" required placeholder="TX" maxlength="2">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP</label>
+                    <input type="text" id="zip" name="zip" placeholder="78701">
+                </div>
+                <div class="form-group">
+                    <label for="jobCost">Typical Service Cost (Optional)</label>
+                    <input type="number" id="jobCost" name="jobCost" placeholder="e.g., 250" min="0">
+                </div>
+                <button type="submit">Get My Free Audit Report</button>
+            </div>
+        </form>
+        <div class="footer">
+            Your report will be emailed within 2 minutes
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('auditForm');
+        const error = document.getElementById('error');
+        const success = document.getElementById('success');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            error.style.display = 'none';
+            success.style.display = 'none';
+            const data = {
+                businessName: document.getElementById('businessName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                niche: document.getElementById('niche').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                zip: document.getElementById('zip').value,
+                customJobCost: document.getElementById('jobCost').value ? parseInt(document.getElementById('jobCost').value) : null,
+            };
+            try {
+                const res = await fetch('/api/form-submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+                if (res.ok) {
+                    const result = await res.json();
+                    if (result.redirectUrl) window.location.href = result.redirectUrl;
+                    else {
+                        success.textContent = 'Success! Check your email for your report.';
+                        success.style.display = 'block';
+                        form.reset();
+                    }
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (err) {
+                error.textContent = 'There was an error. Please try again.';
+                error.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
