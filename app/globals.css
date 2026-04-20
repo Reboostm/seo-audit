@@ -10,11 +10,23 @@ html { scroll-behavior: smooth; }
 }
 
 .main-content {
-  @apply ml-64 p-8;
+  @apply ml-64 p-8 flex-1 w-full max-w-full;
+}
+
+@media (min-width: 1536px) {
+  .main-content {
+    @apply p-12;
+  }
 }
 
 .card {
-  @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
+  @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6 w-full;
+}
+
+@media (min-width: 1536px) {
+  .card {
+    @apply p-8;
+  }
 }
 
 .btn-primary {
@@ -30,10 +42,25 @@ html { scroll-behavior: smooth; }
 .badge-error { @apply bg-red-100 text-red-800; }
 .badge-info { @apply bg-blue-100 text-blue-800; }
 
-table { @apply w-full border-collapse; }
-th { @apply text-left px-4 py-3 font-semibold text-gray-700 bg-gray-100 border-b border-gray-200; }
-td { @apply px-4 py-3 border-b border-gray-200; }
-tr:hover { @apply bg-gray-50; }
+table {
+  @apply w-full border-collapse;
+}
+
+th {
+  @apply text-left px-4 py-3 font-semibold text-gray-700 bg-gray-100 border-b border-gray-200;
+}
+
+td {
+  @apply px-4 py-3 border-b border-gray-200;
+}
+
+tr:hover {
+  @apply bg-gray-50;
+}
+
+.overflow-x-auto {
+  @apply w-full;
+}
 
 input, select, textarea {
   @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
