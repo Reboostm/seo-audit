@@ -1,64 +1,64 @@
 export const NICHE_DEFAULTS: Record<string, { jobCost: number; callsLostMonthly: number }> = {
   // Home Services
-  plumber: { jobCost: 250, callsLostMonthly: 15 },
-  electrician: { jobCost: 300, callsLostMonthly: 12 },
-  hvac: { jobCost: 400, callsLostMonthly: 10 },
-  roofer: { jobCost: 500, callsLostMonthly: 8 },
-  painter: { jobCost: 200, callsLostMonthly: 10 },
-  handyman: { jobCost: 150, callsLostMonthly: 12 },
-  contractor: { jobCost: 800, callsLostMonthly: 8 },
-  landscaper: { jobCost: 350, callsLostMonthly: 12 },
-  tree_service: { jobCost: 400, callsLostMonthly: 8 },
-  pool_service: { jobCost: 150, callsLostMonthly: 10 },
-  chimney_sweep: { jobCost: 250, callsLostMonthly: 6 },
+  plumber: { jobCost: 250, callsLostMonthly: 28 },
+  electrician: { jobCost: 300, callsLostMonthly: 24 },
+  hvac: { jobCost: 400, callsLostMonthly: 20 },
+  roofer: { jobCost: 500, callsLostMonthly: 16 },
+  painter: { jobCost: 200, callsLostMonthly: 22 },
+  handyman: { jobCost: 150, callsLostMonthly: 26 },
+  contractor: { jobCost: 800, callsLostMonthly: 18 },
+  landscaper: { jobCost: 350, callsLostMonthly: 25 },
+  tree_service: { jobCost: 400, callsLostMonthly: 18 },
+  pool_service: { jobCost: 150, callsLostMonthly: 22 },
+  chimney_sweep: { jobCost: 250, callsLostMonthly: 14 },
 
   // Cleaning Services
-  pest_control: { jobCost: 180, callsLostMonthly: 8 },
-  house_cleaning: { jobCost: 200, callsLostMonthly: 12 },
-  carpet_cleaner: { jobCost: 150, callsLostMonthly: 10 },
-  window_cleaning: { jobCost: 180, callsLostMonthly: 8 },
-  pressure_washing: { jobCost: 200, callsLostMonthly: 10 },
+  pest_control: { jobCost: 180, callsLostMonthly: 18 },
+  house_cleaning: { jobCost: 200, callsLostMonthly: 26 },
+  carpet_cleaner: { jobCost: 150, callsLostMonthly: 22 },
+  window_cleaning: { jobCost: 180, callsLostMonthly: 18 },
+  pressure_washing: { jobCost: 200, callsLostMonthly: 22 },
 
   // Auto Services
-  auto_mechanic: { jobCost: 350, callsLostMonthly: 14 },
-  auto_detailing: { jobCost: 120, callsLostMonthly: 15 },
-  car_wash: { jobCost: 25, callsLostMonthly: 40 },
-  tire_shop: { jobCost: 200, callsLostMonthly: 12 },
+  auto_mechanic: { jobCost: 350, callsLostMonthly: 30 },
+  auto_detailing: { jobCost: 120, callsLostMonthly: 32 },
+  car_wash: { jobCost: 25, callsLostMonthly: 80 },
+  tire_shop: { jobCost: 200, callsLostMonthly: 26 },
 
   // Security & Services
-  locksmith: { jobCost: 200, callsLostMonthly: 6 },
-  security_system: { jobCost: 500, callsLostMonthly: 4 },
+  locksmith: { jobCost: 200, callsLostMonthly: 14 },
+  security_system: { jobCost: 500, callsLostMonthly: 10 },
 
   // Professional Services
-  lawyer: { jobCost: 500, callsLostMonthly: 5 },
-  accountant: { jobCost: 300, callsLostMonthly: 4 },
-  dentist: { jobCost: 250, callsLostMonthly: 8 },
-  chiropractor: { jobCost: 150, callsLostMonthly: 10 },
-  physical_therapist: { jobCost: 120, callsLostMonthly: 8 },
-  veterinarian: { jobCost: 200, callsLostMonthly: 12 },
+  lawyer: { jobCost: 500, callsLostMonthly: 12 },
+  accountant: { jobCost: 300, callsLostMonthly: 10 },
+  dentist: { jobCost: 250, callsLostMonthly: 18 },
+  chiropractor: { jobCost: 150, callsLostMonthly: 22 },
+  physical_therapist: { jobCost: 120, callsLostMonthly: 18 },
+  veterinarian: { jobCost: 200, callsLostMonthly: 26 },
 
   // Beauty & Wellness
-  hair_salon: { jobCost: 80, callsLostMonthly: 20 },
-  nail_salon: { jobCost: 60, callsLostMonthly: 25 },
-  spa: { jobCost: 150, callsLostMonthly: 10 },
-  massage_therapy: { jobCost: 100, callsLostMonthly: 12 },
-  personal_trainer: { jobCost: 80, callsLostMonthly: 10 },
-  yoga_studio: { jobCost: 120, callsLostMonthly: 8 },
+  hair_salon: { jobCost: 80, callsLostMonthly: 40 },
+  nail_salon: { jobCost: 60, callsLostMonthly: 50 },
+  spa: { jobCost: 150, callsLostMonthly: 22 },
+  massage_therapy: { jobCost: 100, callsLostMonthly: 26 },
+  personal_trainer: { jobCost: 80, callsLostMonthly: 22 },
+  yoga_studio: { jobCost: 120, callsLostMonthly: 18 },
 
   // Real Estate & Property
-  realtor: { jobCost: 5000, callsLostMonthly: 3 },
-  property_manager: { jobCost: 800, callsLostMonthly: 5 },
-  home_inspector: { jobCost: 400, callsLostMonthly: 4 },
+  realtor: { jobCost: 5000, callsLostMonthly: 8 },
+  property_manager: { jobCost: 800, callsLostMonthly: 12 },
+  home_inspector: { jobCost: 400, callsLostMonthly: 10 },
 
   // Pet Services
-  pet_grooming: { jobCost: 80, callsLostMonthly: 15 },
-  pet_training: { jobCost: 200, callsLostMonthly: 6 },
-  dog_daycare: { jobCost: 40, callsLostMonthly: 20 },
+  pet_grooming: { jobCost: 80, callsLostMonthly: 32 },
+  pet_training: { jobCost: 200, callsLostMonthly: 14 },
+  dog_daycare: { jobCost: 40, callsLostMonthly: 45 },
 
   // Business Services
-  web_design: { jobCost: 1500, callsLostMonthly: 3 },
-  digital_marketing: { jobCost: 800, callsLostMonthly: 4 },
-  tax_preparation: { jobCost: 300, callsLostMonthly: 5 },
+  web_design: { jobCost: 1500, callsLostMonthly: 8 },
+  digital_marketing: { jobCost: 800, callsLostMonthly: 10 },
+  tax_preparation: { jobCost: 300, callsLostMonthly: 12 },
 };
 
 export function calculateLostRevenue(
