@@ -134,16 +134,59 @@ export default function Dashboard() {
 
         {/* Embeddable Form Info */}
         <div className="card mt-8">
-          <h2 className="text-lg font-bold mb-4">Embed Your Form</h2>
+          <h2 className="text-lg font-bold mb-2">📋 Embed Your Form</h2>
           <p className="text-gray-600 text-sm mb-4">
-            Place this form on your GHL landing pages to capture business information and generate audit reports:
+            Copy this code to embed the SEO audit form on your GHL landing pages:
           </p>
-          <div className="bg-gray-100 p-4 rounded-md font-mono text-xs text-gray-700 overflow-x-auto">
-            &lt;iframe src="{typeof window !== 'undefined' ? window.location.origin : ''}/form.html" width="100%" height="600"&gt;&lt;/iframe&gt;
+
+          <div className="bg-gray-900 p-4 rounded-md font-mono text-xs text-green-400 overflow-x-auto mb-4 border border-gray-700">
+            <div className="mb-2 text-gray-400">// Option 1: Embed via iFrame</div>
+            <div className="mb-3 select-all">&lt;iframe src="{typeof window !== 'undefined' ? window.location.origin : ''}/form.html" width="100%" height="600" frameborder="0" style="border: none; border-radius: 8px;"&gt;&lt;/iframe&gt;</div>
+
+            <div className="mt-4 mb-2 text-gray-400">// Option 2: Direct link</div>
+            <div className="select-all">&lt;a href="{typeof window !== 'undefined' ? window.location.origin : ''}/form.html" target="_blank"&gt;Open SEO Audit Form&lt;/a&gt;</div>
           </div>
-          <p className="text-gray-600 text-xs mt-3">
-            Or download the form.html file and embed it directly on your pages.
-          </p>
+
+          <div className="flex gap-3 mb-4">
+            <button
+              onClick={() => {
+                const iframeCode = `<iframe src="${typeof window !== 'undefined' ? window.location.origin : ''}/form.html" width="100%" height="600" frameborder="0" style="border: none; border-radius: 8px;"></iframe>`;
+                navigator.clipboard.writeText(iframeCode);
+                alert('iFrame code copied to clipboard!');
+              }}
+              className="px-4 py-2 bg-green-600 text-white rounded-md text-sm hover:bg-green-700 font-medium"
+            >
+              📋 Copy iFrame Code
+            </button>
+            <button
+              onClick={() => {
+                const directCode = `${typeof window !== 'undefined' ? window.location.origin : ''}/form.html`;
+                navigator.clipboard.writeText(directCode);
+                alert('Form URL copied to clipboard!');
+              }}
+              className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 font-medium"
+            >
+              📋 Copy Form URL
+            </button>
+            <a
+              href="/form.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-gray-600 text-white rounded-md text-sm hover:bg-gray-700 font-medium"
+            >
+              👁️ Preview Form
+            </a>
+          </div>
+
+          <div className="bg-blue-50 border border-blue-200 p-4 rounded-md text-sm text-gray-700">
+            <p className="font-semibold text-blue-900 mb-2">📌 How to Use:</p>
+            <ul className="list-disc list-inside space-y-1 text-xs">
+              <li>Paste the iFrame code directly into your GHL landing page HTML</li>
+              <li>Or link directly to <code className="bg-gray-200 px-2 py-1 rounded text-xs">/form.html</code></li>
+              <li>Form collects: Business Name, Email, Phone, Niche, Location, Job Cost</li>
+              <li>Reports are automatically emailed via GHL within 2 minutes</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
