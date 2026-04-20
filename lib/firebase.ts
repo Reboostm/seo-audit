@@ -33,6 +33,7 @@ export async function getConfig() {
       googlePlaces: { enabled: true },
       serpapi: { enabled: true },
     },
+    lastUpdated: new Date(),
   };
 }
 
