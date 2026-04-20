@@ -28,6 +28,11 @@ export async function queryLeads(filters: any = {}) {
   return [];
 }
 
+export async function deleteLead(leadId: string) {
+  console.log('Delete lead called with:', leadId);
+  return true;
+}
+
 export async function getConfig() {
   return {
     nicheDefaults: {
