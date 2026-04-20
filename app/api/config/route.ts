@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
 
     if (!config) {
       config = {
-        nicheDefaults: NICHE_DEFAULTS,
+        nicheDefaults: NICHE_DEFAULTS as any,
         apiToggles: DEFAULT_API_CONFIG,
         lastUpdated: new Date(),
       };
@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
     console.error('Config fetch error:', error);
     return NextResponse.json(
       {
-        nicheDefaults: NICHE_DEFAULTS,
+        nicheDefaults: NICHE_DEFAULTS as any,
         apiToggles: DEFAULT_API_CONFIG,
       },
       { status: 200 }
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
 
     const updatedConfig = {
-      nicheDefaults: body.nicheDefaults || NICHE_DEFAULTS,
+      nicheDefaults: body.nicheDefaults || (NICHE_DEFAULTS as any),
       apiToggles: body.apiToggles || DEFAULT_API_CONFIG,
       lastUpdated: new Date(),
     };
