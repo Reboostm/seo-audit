@@ -1,14 +1,4 @@
 {
   "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "env": {
-    "NEXT_PUBLIC_FIREBASE_API_KEY": { "description": "Firebase API Key" },
-    "NEXT_PUBLIC_FIREBASE_PROJECT_ID": { "description": "Firebase Project ID" },
-    "GOOGLE_PLACES_API_KEY": { "description": "Google Places API Key" },
-    "SERPAPI_API_KEY": { "description": "SerpAPI Key" },
-    "GHL_API_KEY": { "description": "GoHighLevel API Key" },
-    "ADMIN_PASSWORD": { "description": "Admin Dashboard Password" }
-  }
+  "framework": "nextjs"
 }
