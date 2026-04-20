@@ -41,9 +41,15 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
+    // Handle API key test requests
+    if (body.testApi && body.key) {
+      return testApiConnection(body.testApi, body.key);
+    }
+
     const updatedConfig = {
       nicheDefaults: body.nicheDefaults || (NICHE_DEFAULTS as any),
       apiToggles: body.apiToggles || DEFAULT_API_CONFIG,
+      apiKeys: body.apiKeys || {},
       lastUpdated: new Date(),
     };
 
@@ -59,5 +65,54 @@ export async function POST(request: NextRequest) {
       { error: 'Failed to update config' },
       { status: 500 }
     );
+  }
+}
+
+async function testApiConnection(apiName: string, apiKey: string): Promise<NextResponse> {
+  try {
+    switch (apiName) {
+      case 'googlePlaces': {
+        const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=test&key=${apiKey}`;
+        const res = await fetch(url);
+        return res.ok
+          ? NextResponse.json({ success: true, message: 'Google Places API connected' }, { status: 200 })
+          : NextResponse.json({ success: false, message: 'Invalid API key' }, { status: 400 });
+      }
+
+      case 'serpapi': {
+        const url = `https://serpapi.com/search?q=test&api_key=${apiKey}`;
+        const res = await fetch(url);
+        return res.ok
+          ? NextResponse.json({ success: true, message: 'SerpAPI connected' }, { status: 200 })
+          : NextResponse.json({ success: false, message: 'Invalid API key' }, { status: 400 });
+      }
+
+      case 'pageSpeed': {
+        const url = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://google.com&key=${apiKey}`;
+        const res = await fetch(url);
+        return res.ok
+          ? NextResponse.json({ success: true, message: 'PageSpeed Insights connected' }, { status: 200 })
+          : NextResponse.json({ success: false, message: 'Invalid API key' }, { status: 400 });
+      }
+
+      case 'ghl': {
+        const res = await fetch('https://api.gohighlevel.com/v1/contacts/', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+          },
+        });
+        return res.ok
+          ? NextResponse.json({ success: true, message: 'GoHighLevel API connected' }, { status: 200 })
+          : NextResponse.json({ success: false, message: 'Invalid API key' }, { status: 400 });
+      }
+
+      default:
+        return NextResponse.json({ success: false, message: 'Unknown API' }, { status: 400 });
+    }
+  } catch (error) {
+    console.error(`Error testing ${apiName}:`, error);
+    return NextResponse.json({ success: false, message: 'Connection test failed' }, { status: 500 });
   }
 }
