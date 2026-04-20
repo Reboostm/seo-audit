@@ -18,6 +18,11 @@ export async function createLead(data: any) {
   return { id: 'lead-' + Date.now() };
 }
 
+export async function updateLead(leadId: string, data: any) {
+  console.log('Update lead called with:', leadId, data);
+  return true;
+}
+
 export async function queryLeads(filters: any = {}) {
   console.log('Query leads called with filters:', filters);
   return [];
