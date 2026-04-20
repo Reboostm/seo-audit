@@ -9,7 +9,7 @@ export interface ReportData {
   gmbRating: number;
   gmbPhotoCount: number;
   websiteSpeed: number;
-  competitors: Array<{ name: string; rank: number; rating: number; reviews: number }>;
+  competitors: Array<{ name: string; rank: number; rating: number; reviewCount: number }>;
   lostRevenueMonthly: number;
   actionItems: Array<{ title: string; status: string }>;
 }
@@ -30,7 +30,7 @@ export function generateHTMLReport(data: ReportData): string {
         `<tr>
           <td style="padding: 10px; border-bottom: 1px solid #eee;">#${c.rank} ${c.name}</td>
           <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">${c.rating} ⭐</td>
-          <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">${c.reviews} reviews</td>
+          <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">${c.reviewCount} reviews</td>
         </tr>`
     )
     .join('');
