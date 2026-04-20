@@ -91,7 +91,7 @@ async function generateReportAsync(leadId: string, formData: any, email: string)
     );
 
     // Send email via GHL
-    await sendGHLEmail(email, reportResult.emailSubject, reportResult.emailBody);
+    await sendGHLEmail(email, reportResult.emailSubject!, reportResult.emailBody!);
 
     // Update lead status
     await updateLead(leadId, {
